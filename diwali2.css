@@ -1,0 +1,47 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: #8144B3;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  opacity: 0; /* initially hidden for fade-in */
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-out { opacity: 0 !important; }
+
+.container div {
+  color: #8144B3;
+  background-color: #F7F16E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Amita', cursive;
+  height: 50vh;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #B7C779;
+  margin-top: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 13px;
+  flex-direction: column;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+button{
+  border-radius: 15px;
+}
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  background: #8144B3;
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink { 50% { opacity: 0; } }

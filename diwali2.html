@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAPPY DIPAWALI !! FOR YOU</title>
+  <link rel="stylesheet" href="diwali2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="text typing-text" id="typing"></div>
+    <span class="typing-cursor"></span>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-in page
+      document.body.style.opacity = 0;
+      setTimeout(() => { document.body.style.opacity = 1; }, 50);
+      document.body.style.transition = "opacity 0.8s ease-in-out";
+
+      // Fade-out on container click (optional, can replace with button if needed)
+      const container = document.querySelector(".container");
+      container.addEventListener("click", () => {
+        document.body.classList.add("fade-out");
+        setTimeout(() => { window.location.href = "nextpage.html"; }, 800);
+      });
+
+      // Typing animation
+      const typingEl = document.getElementById("typing");
+      const text = `Hello ji 😄
+दीपावली कि ढेरों शुभकामनायें ✨🪔
+इस खास दिन पर आपके लिए खुशियों और मिठास कि कामना करता हूँ।
+
+वैसे आपको हमेशा मेरी दोस्त बने रहना है ठीक है न। कभी सोचा नहीं था कि इस मेरे जैसे को इतनी अच्छी दोस्त मिल जाएगी 🫠 और हमारे पे आप इतना जल्दी भरोसा कर ली उसके लिए "Thank You"। और आपने कहा था कि आप मेरे से छोटी हो तो एक बात कहूंगा कि आगे बहुत से लोग मिलेंगे आपको लेकिन इतना जल्दी किसी पर भरोसा न करियेगा क्युकी सब लड़के एक जैसे नहीं होते है।
+
+हमने आपको मिठाई भेजा था कैसा लगा 😁। हमेशा खुश रहिये मुस्कुराते रहिये और पढ़ाई करिये। मैने आपको थोड़ा परेशान भी किया है तो उसके लिए "sorry" आगे से ऐसा कुछ नहीं करूँगा।
+
+हमारे तरफ से आपको और आपके पुरे परिवार को दीपावली कि ढेरों शुभकामनायें 😊।
+tata,bye bye,see you.
+
+इस दीपावली जलाना हजारो दिये
+खूब करना उजाला खुशी के लिए
+और एक कोने में एक दिया जरूर जलाना
+जो जले हमारी दोस्ती के लिए ❤️।`;
+
+
+      let index = 0;
+      function typeChar() {
+        if (index < text.length) {
+          const ch = text.charAt(index);
+          typingEl.innerHTML += ch === '\n' ? '<br>' : ch;
+          index++;
+          setTimeout(typeChar, 30);
+        }
+      }
+      typeChar();
+    });
+  </script>
+  
+  <button id="sendBtn">Send 💌</button>
+
+<script>
+  const telegramUser = "niraj_ff123"; // अपना telegram username डालो बिना @
+  const message = encodeURIComponent("Happy दीपावली 🎉🪔✨"); // message जो पहले से typed दिखे
+
+  document.getElementById("sendBtn").addEventListener("click", () => {
+    const url = `https://t.me/${telegramUser}?text=${message}`;
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+
+</html>

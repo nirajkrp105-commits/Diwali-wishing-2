@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY DIPAWALI !! FOR YOU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dipawali.css">
+</head>
+
+<body>
+  <div class="container">
+    <img src="diwali1.png" alt="myimage" />
+    <p id="typing" class="typing-text"> </p><span class="typing-cursor"></span>
+    <a href="diwali2.html">
+      <button class="btn primary">Letter 💌</button>
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-in
+      document.body.style.opacity = 0;
+      setTimeout(() => { document.body.style.opacity = 1; }, 50);
+      document.body.style.transition = "opacity 0.8s ease-in-out";
+
+      // Fade-out on button click
+      const btns = document.querySelectorAll(".btn.primary");
+      btns.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.parentElement.href;
+          document.body.classList.add("fade-out");
+          setTimeout(() => { window.location = href; }, 800);
+        });
+      });
+
+      // Typing animation
+      const typingEl = document.getElementById("typing");
+      const text = `जितना खाना हो खा लीजिये, बाद में न बोलियेगा कि मैंने कुछ भेजा नही 😂`;
+
+      let index = 0;
+      function typeChar() {
+        if (index < text.length) {
+          const ch = text.charAt(index);
+          typingEl.innerHTML += ch === '\n' ? '<br>' : ch;
+          index++;
+          setTimeout(typeChar, 40);
+        }
+      }
+      typeChar();
+    });
+  </script>
+</body>
+
+</html>

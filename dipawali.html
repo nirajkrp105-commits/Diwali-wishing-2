@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY DIPAWALI !! FOR YOU</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="Canvas"></canvas>
+
+  <div class="container">
+    <div class="text typing-text" id="typing"></div>
+    <span class="typing-cursor"></span>
+    <img src="diwali.png" alt="my image" />
+    <a href="diwali.html">
+      <button class="btn primary">click for sweets </button>
+    </a>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-in page
+      document.body.style.opacity = 0;
+      setTimeout(() => { document.body.style.opacity = 1; }, 50);
+      document.body.style.transition = "opacity 0.8s ease-in-out";
+
+      // Fade-out on button click
+      const btns = document.querySelectorAll(".btn.primary");
+      btns.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.parentElement.href;
+          document.body.classList.add("fade-out");
+          setTimeout(() => { window.location = href; }, 800);
+        });
+      });
+
+      // Typing animation
+      const typingEl = document.getElementById("typing");
+      const text = `सबसे पहले हमारी प्यारी सी दोस्त को हमारी तरफ से 🪔 शुभ दीपावली 🪔 !!`;
+
+      let index = 0;
+      function typeChar() {
+        if (index < text.length) {
+          const ch = text.charAt(index);
+          typingEl.innerHTML += ch === '\n' ? '<br>' : ch;
+          index++;
+          setTimeout(typeChar, 40);
+        }
+      }
+      typeChar();
+    });
+  </script>
+</body>
+
+</html>

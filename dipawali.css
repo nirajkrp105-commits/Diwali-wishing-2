@@ -1,0 +1,86 @@
+/* Body fade-in/fade-out */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  opacity: 0; /* initially hidden */
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-out { opacity: 0 !important; }
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Image Style */
+img {
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px gold;
+}
+
+/* Paragraph Text */
+p.typing-text {
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #FFE6A6;
+  background: linear-gradient(45deg, #FFD700, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.no-gradient {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  background: #fff;
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Button Style */
+button {
+  background: linear-gradient(45deg, #FF512F, #F09819);
+  color: white;
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #FFD700;
+}
+
+.btn.primary {
+  /* For JS fade-out */
+}
